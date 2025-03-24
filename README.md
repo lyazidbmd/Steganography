@@ -1,2 +1,2 @@
-#Steganography in PNG Images
+Steganography in PNG Images
 This project implements a steganography algorithm that hides text messages within PNG images. It leverages bit-level operations to modify the least significant bits (LSB) of image pixels to encode the message, ensuring the hidden data remains undetectable to the human eye. The system includes methods for encoding, decoding, and verifying the integrity of the hidden messages using MD5 hashing. The project supports image manipulation in grayscale format and offers utilities for file management, bitstream handling, and image loading and saving. It is designed to demonstrate the principles of data hiding and digital watermarking.
