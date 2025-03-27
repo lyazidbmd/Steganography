@@ -8,7 +8,7 @@
 int main() 
 {
     // Charger le message à cacher
-    char *message = CreateMessageFromFile("../message.txt");
+    char *message = CreateMessageFromFile("../CMakeLists.txt");
     if (!message) {
         fprintf(stderr, "Erreur : Impossible de créer le message\n");
         return EXIT_FAILURE;
@@ -44,7 +44,15 @@ int main()
         return EXIT_FAILURE;
     }
 
-    
+    char bit=0;
+    for(int i=0; i<lenaimg->width; i++){
+        for(int j=0; j<lenaimg->height; j++){
+            bit=ReadBit(bs);
+            if(bit==-1) break;
+            lenaimg->data[i][j] = (lenaimg->data[i][j] & 0xFE) | bit;
+        }
+        if(bit==-1) break;
+    }
 
     // Sauvegarde de l'image modifiée
     err = E3ADumpImage("../lena_avec_codage.png", lenaimg);
